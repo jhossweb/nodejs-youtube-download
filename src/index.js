@@ -1,15 +1,43 @@
 import express from 'express'
-import ytdl from 'ytdl-core'
-import fs from 'node:fs/promises'
-import { createWriteStream } from 'fs'
+import { dirname, join } from 'path'
+import { fileURLToPath } from 'node:url'
 
-const videoUrl = "https://www.youtube.com/watch?v=jhvfYsYQXkc&pp=ygUTdmlkZW9zIGRlIHVuIG1pbnV0bw%3D%3D"
+import { router } from './download-youtube/routes/router.js'
 
-const dowloand = async () => {
-    const info = await ytdl.getInfo(videoUrl)
-    const videoStream = ytdl(videoUrl, { quality: 'highest', filter: "videoandaudio" })
+class AppServer
+{
+    _port = 5000
+    _app = express()
+    __dirname = dirname(fileURLToPath(import.meta.url))
 
-    videoStream.pipe(createWriteStream('/home/jhossweb/Vídeos/video.mp4'))
+    constructor() {
+        this.middlewares()
+        console.log(this.__dirname)
+        this._app.use('/api', router)
+    }
+
+    middlewares () {
+        this._app.use('/', express.static(join(this.__dirname, '../public') ))
+        this._app.use(express.urlencoded({ extended: true }))
+    }
+
+    router() {
+        this._app()
+    }
+
+    listen() {
+        this._app.listen(this._port)
+        console.log(`Server on port: ${this._port}`)
+    }
 }
 
-dowloand()
+const server = new AppServer
+server.listen()
+
+// const videoUrl = "https://www.youtube.com/shorts/FwNA-vQtQDE"
+
+// const dowloand = async () => {
+//    
+// }
+
+// dowloand()
