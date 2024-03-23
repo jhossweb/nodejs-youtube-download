@@ -1,0 +1,17 @@
+{
+  "name": "youtube-dowloand",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.1",
+    "ytdl-core": "^4.11.5"
+  }
+}
