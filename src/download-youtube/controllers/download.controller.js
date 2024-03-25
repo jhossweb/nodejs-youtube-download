@@ -1,5 +1,6 @@
 import ytdl from 'ytdl-core'
 import { createWriteStream } from 'fs'
+import { homedir } from 'node:os'
 
 export class DownloadController
 {
@@ -12,7 +13,7 @@ export class DownloadController
         
         const videoStream = ytdl(url, { quality, format, filter: "videoandaudio" })
         
-        const videoDownload = videoStream.pipe(createWriteStream(`/home/jhossweb/Vídeos/${title}.${format}`))
+        const videoDownload = videoStream.pipe(createWriteStream(`${homedir()}/Download/${title}.${format}`))
 
         if(videoDownload) {
             console.log("video descargado")

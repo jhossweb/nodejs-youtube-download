@@ -5,27 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles/styles.css">
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Download Youtube</title>
 </head>
 <body>
     
-    <section class="container">
-        <form action="/api/download" method="post">
-            <div class="form-group">
-                <input type="url" name="url" placeholder="Url Video"> 
+    <section class="h-screen p-3 mx-auto max-sm:bg-white max-sm:container max-sm:grid max-sm:place-content-center 
+    max-md:bg-white max-md:container max-md:grid max-md:place-content-center
+    md:bg-white md:container md:grid md:place-content-center">
+
+        <div class="p2 my-5">
+            <h2 class="text-yellow-500 text-center text-xl"> Download Video </h2>
+        </div>
+
+        <form class="w-full" action="/api/download" method="post">
+            <div class="max-sm:grid max-sm:justify-items-center max-smd:grid-cols-1 max-md:grid max-md:justify-items-center max-md:grid-cols-1 md:grid md:grid-cols-5 gap-4 p-3">
+                <input class="md:col-span-2 p-2 rounded-lg" type="url" name="url" placeholder="Url Video"> 
                 
-                <select name="quality">
+                <select class="max-sm:w-full max-md:w-full p-3 rounded-lg" name="quality">
                     <option value="highest">Alta calidad</option>
                     <option value="medium">Calidad media</option>
                     <option value="lowest">Baja calidad</option>
                 </select>
 
-                <select name="format">
+                <select class="max-sm:w-full max-md:w-full p-3 rounded-lg" name="format">
                     <option value="mp4"> MP4 </option>
                 </select>
                 
-                <input type="submit" value="Download">
+                <a id="" class="max-sm:w-full max-md:w-full p-3 rounded-lg bg-amber-400" type="submit"> Download </a>
             </div>
         </form>
     </section>

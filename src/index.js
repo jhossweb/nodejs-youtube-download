@@ -2,17 +2,17 @@ import express from 'express'
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'node:url'
 
+
 import { router } from './download-youtube/routes/router.js'
 
 class AppServer
 {
-    _port = 5000
+    _port = 4000
     _app = express()
     __dirname = dirname(fileURLToPath(import.meta.url))
 
     constructor() {
         this.middlewares()
-        console.log(this.__dirname)
         this._app.use('/api', router)
     }
 
