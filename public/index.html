@@ -19,7 +19,7 @@
             <h2 class="text-yellow-500 text-center text-xl"> Download Video </h2>
         </div>
 
-        <form class="w-full" action="/api/download" method="post">
+        <form class="w-full" action="" method="post">
             <div class="max-sm:grid max-sm:justify-items-center max-smd:grid-cols-1 max-md:grid max-md:justify-items-center max-md:grid-cols-1 md:grid md:grid-cols-5 gap-4 p-3">
                 <input class="md:col-span-2 p-2 rounded-lg" type="url" name="url" placeholder="Url Video"> 
                 
@@ -32,11 +32,17 @@
                 <select class="max-sm:w-full max-md:w-full p-3 rounded-lg" name="format">
                     <option value="mp4"> MP4 </option>
                 </select>
-                
-                <a id="" class="max-sm:w-full max-md:w-full p-3 rounded-lg bg-amber-400" type="submit"> Download </a>
+                <button type="submit" class="max-sm:w-full max-md:w-full p-3 rounded-lg bg-amber-400"> Download </button>
+
             </div>
         </form>
     </section>
+    
+    <section id="miModal" class="fixed inset-0 bg-amber-400 flex items-center justify-center z-10 hidden">
+        <a id="downloadLink" href=""  class="max-sm:w-full max-md:w-full p-3 rounded-lg bg-amber-400 text-center" > Download </a>
+    </section>
+    
 
+    <script type="module" src="js/fetch.saved.js"></script>
 </body>
 </html>

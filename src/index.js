@@ -19,6 +19,7 @@ class AppServer
     middlewares () {
         this._app.use('/', express.static(join(this.__dirname, '../public') ))
         this._app.use(express.urlencoded({ extended: true }))
+        this._app.use(express.json())
     }
 
     router() {
