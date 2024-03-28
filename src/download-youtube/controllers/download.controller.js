@@ -4,6 +4,8 @@ import { homedir } from 'node:os'
 
 export class DownloadController
 {
+    _pathSaved = "/home/jhossweb/Vídeos/"
+
     async getDownload (req, res) {
         try {
             console.log(req.query.url)
@@ -13,7 +15,7 @@ export class DownloadController
             const pathLimpio = encodeURIComponent(path)
             console.log(pathLimpio)
 
-            await res.download(`/home/jhossweb/Vídeos/${pathLimpio}`)
+            await res.download(`${this._pathSaved}${pathLimpio}`)
         } catch(e) {
             console.log(e.message())
         }
@@ -35,17 +37,28 @@ export class DownloadController
             console.log(titleLimpio)
 
             res.setHeader('Content-Disposition', `attachment; filename="${titleLimpio}.${format}"`);
-            
-            const videoDownload = videoStream.pipe(createWriteStream(`/home/jhossweb/Vídeos/${pathVideo}`))
-
+            const videoDownload = videoStream.pipe(createWriteStream(`${this._pathSaved}${pathVideo}`))
+             
             if(videoDownload) {
                 console.log("video descargado")
             }
 
             
-            return res.json(`/home/jhossweb/Vídeos/${pathVideo}`);
+            return res.json(`${this._pathSaved}${pathVideo}`);
         } catch (e) {
             console.error(e.message)
         }
     }
 }
+
+
+ //  // Maneja el progreso de descarga
+//  let totalBytes = 0;
+//  videoStream.on('data', (chunk) => {
+//      totalBytes += chunk.length;
+//      let progress = (totalBytes / info.videoDetails.lengthSeconds) * 100;
+//      console.log(`Progreso: ${progress.toFixed(2)}%`);
+     
+//      //Envía el progreso al cliente a través de una respuesta JSON
+//      return res.write(JSON.stringify({ progress }));
+//   })

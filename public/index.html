@@ -6,6 +6,8 @@
 
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Agrega ProgressBar.js (puedes usar un enlace de CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
 
     <title>Download Youtube</title>
 </head>
@@ -38,11 +40,14 @@
         </form>
     </section>
     
-    <section id="miModal" class="fixed inset-0 bg-amber-400 flex items-center justify-center z-10 hidden">
+    <section id="miModal" class="fixed static inset-0 bg-amber-400 flex items-center justify-center z-10 hidden">
+        <div id="close-modal" class="absolute top-0 right-0 p-2 cursor-pointer text-2xl">X</div>
         <a id="downloadLink" href=""  class="max-sm:w-full max-md:w-full p-3 rounded-lg bg-amber-400 text-center" > Download </a>
     </section>
+
+    <progress id="progressBar" value="0" max="100"></progress>
     
 
-    <script type="module" src="js/fetch.saved.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
