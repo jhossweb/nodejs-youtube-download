@@ -11,6 +11,7 @@ export class FetchSaved
         })
         
         const url = await response.json()
+        console.log(url)
         return url
     }
 }

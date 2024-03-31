@@ -3,10 +3,10 @@ import { closeModal } from "./close.modal.js";
 
 export const showModal = (url) => {
     /* Para que el modal se abra en 10 sg */
-    setTimeout( () => { 
-        document.getElementById('miModal')
-        .classList.remove('hidden'); 
-    }, 8000)
+    // setTimeout( () => { 
+        // }, 8000)
+             document.getElementById('miModal')
+             .classList.remove('hidden'); 
     
     /** Boton de Descarga */
     const downloadLink = document.getElementById("downloadLink")
