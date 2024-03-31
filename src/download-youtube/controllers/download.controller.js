@@ -12,8 +12,6 @@ export class DownloadController
             const url = req.query.url
             const path = this._getPathFromUrl(url)
 
-            console.log(path)
-
             await res.download(`${this._pathSaved}${path}`)
             
         } catch(e) {
@@ -28,6 +26,7 @@ export class DownloadController
             const { url, format, quality } = req.body
             const info = await ytdl.getInfo(url)
             const title = info.videoDetails.title
+            const size = info.formats[0].contentLength
                                     
             const titleLimpio = this._sanitizeTitle(title)
             const pathVideo = `${titleLimpio}.${format}`
