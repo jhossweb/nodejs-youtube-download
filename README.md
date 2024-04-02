@@ -32,9 +32,7 @@
     1. Para hacer uso de esta aplicación o hacerle alguna modificación, puedes clonar el repositorio.
 </p>
 
-<p>
-    2. Una vez que lo clones, usa los siguientes comandos:
-</p>
+2. Una vez que lo clones, usa los siguientes comandos:
 ```
 npm install
 npm run dev
