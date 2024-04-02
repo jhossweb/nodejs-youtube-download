@@ -40,13 +40,13 @@
     <li>
         <p> Instala las dependencias </p>
         ```
-            npm install
+        npm install
         ```
     </li>
     <li>
         <p> Ejecución </p>
         ```
-            npm run dev
+        npm run dev
         ```
     </li>
 </ul>
