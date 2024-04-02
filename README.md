@@ -32,21 +32,8 @@
     1. Para hacer uso de esta aplicación o hacerle alguna modificación, puedes clonar el repositorio.
 </p>
 
-<p>
-    2. Una vez que lo clones, usa los siguientes comandos:
-</p>
-
-<ul>
-    <li>
-        <p> Instala las dependencias </p>
-        ```
-            npm install
-        ```
-    </li>
-    <li>
-        <p> Ejecución </p>
-        ```
-            npm run dev
-        ```
-    </li>
-</ul>
+2. Una vez que lo clones, usa los siguientes comandos:
+```
+npm install
+npm run dev
+```
