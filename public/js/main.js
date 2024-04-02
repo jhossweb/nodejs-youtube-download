@@ -16,7 +16,9 @@ const form = document.querySelector(".w-full")
         const url = await fetchSaved.download(formData)
         
         if(url) {
-            hiddenModalProgress()
+            setTimeout( () => {
+                hiddenModalProgress()
+            }, 30000 )
             showModalDownload(url)
         }
         
