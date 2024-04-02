@@ -4,7 +4,7 @@ import { createWriteStream } from 'fs'
 
 export class DownloadController
 {
-    _pathSaved = "/home/jhossweb/Vídeos/youtube-download/"
+    _pathSaved = process.env.PATH_SAVED
 
     async getDownload (req, res) {
         try {

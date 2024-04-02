@@ -16,12 +16,12 @@ class AppServer
     constructor() {
         this.middlewares()
         this._app.use('/api', router)
-
+        
         //this.jobsDelete()
     }
 
     jobsDelete() {
-        cron.schedule('2 * * * * *', deleteVideos)
+        cron.schedule('30 18 * * *', deleteVideos)
     }
 
     middlewares () {
