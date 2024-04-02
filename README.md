@@ -35,18 +35,7 @@
 <p>
     2. Una vez que lo clones, usa los siguientes comandos:
 </p>
-
-<ul>
-    <li>
-        <p> Instala las dependencias </p>
-        ```
-        npm install
-        ```
-    </li>
-    <li>
-        <p> Ejecución </p>
-        ```
-        npm run dev
-        ```
-    </li>
-</ul>
+```
+npm install
+npm run dev
+```
