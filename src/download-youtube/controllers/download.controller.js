@@ -15,8 +15,7 @@ export class DownloadController
             
             const url = req.query.url
             const path = this._getPathFromUrl(url)
-            console.log(url)
-            console.log(path)
+
             await res.download(`${this._pathDownload}${path}`)
             
         } catch(e) {
@@ -41,7 +40,7 @@ export class DownloadController
                                     .pipe(createWriteStream(`${this._pathDownload}${pathVideo}`))
 
             if(!videoDownload) return res.status(500).json({ error: "Error al descargar Video" })
-            console.log(videoDownload.path)
+            
             return res.status(200).json(`${this._pathDownload}${pathVideo}`);
         } catch (e) {
             console.error(e.message)
