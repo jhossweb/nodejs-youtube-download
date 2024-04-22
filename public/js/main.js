@@ -1,4 +1,4 @@
-import { hiddenModalProgress, showModalProgress } from './events/modal.progress.js'
+import { hiddenModalProgress, showModalProgress, progress } from './events/modal.progress.js'
 import { showModalDownload } from './events/modal.download.js'
 
 
@@ -14,12 +14,10 @@ const form = document.querySelector(".w-full")
         showModalProgress()
         let formData = Object.fromEntries( new FormData(e.target) )
         const url = await fetchSaved.download(formData)
-        
+        progress(url.size)
         if(url) {
-            setTimeout( () => {
-                hiddenModalProgress()
-            }, 30000 )
-            showModalDownload(url)
+            
+            showModalDownload(url.path)
         }
         
     })
